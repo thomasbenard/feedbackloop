@@ -1,14 +1,16 @@
 package com.thomasbenard.feedbackloop;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import static java.lang.Math.*;
 
 public class Position {
-    public final int x;
-    public final int y;
+    public final List<Integer> coordinates;
 
-    public Position(int x, int y) {
-        this.x = x;
-        this.y = y;
+    public Position(Integer... coordinates) {
+        this.coordinates = new ArrayList(Arrays.asList(coordinates));
     }
 
     @Override
@@ -18,15 +20,12 @@ public class Position {
 
         Position position = (Position) o;
 
-        if (x != position.x) return false;
-        return y == position.y;
+        return coordinates != null ? coordinates.equals(position.coordinates) : position.coordinates == null;
     }
 
     @Override
     public int hashCode() {
-        int result = x;
-        result = 31 * result + y;
-        return result;
+        return coordinates != null ? coordinates.hashCode() : 0;
     }
 
     public PositionComparator isCloserTo(Position target) {
@@ -34,6 +33,9 @@ public class Position {
     }
 
     double distanceTo(Position origin) {
-        return sqrt(pow(origin.x - x, 2) + pow(origin.y - y, 2));
+        int norm = 0;
+        for (int i = 0; i < coordinates.size(); ++i)
+            norm += pow(origin.coordinates.get(i) - coordinates.get(i), 2);
+        return sqrt(norm);
     }
 }

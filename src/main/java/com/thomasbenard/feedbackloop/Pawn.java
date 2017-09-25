@@ -12,13 +12,13 @@ public class Pawn {
 
     public Position move(Direction direction, int distance) {
         if (direction == NORTH)
-            position = new Position(position.x, position.y + distance);
+            position = new Position(position.coordinates.get(0), position.coordinates.get(1) + distance);
         else if (direction == EAST)
-            position = new Position(position.x + distance, position.y);
+            position = new Position(position.coordinates.get(0) + distance, position.coordinates.get(1));
         else if (direction == SOUTH)
-            position = new Position(position.x, position.y - distance);
+            position = new Position(position.coordinates.get(0), position.coordinates.get(1) - distance);
         else
-            position = new Position(position.x - distance, position.y);
+            position = new Position(position.coordinates.get(0) - distance, position.coordinates.get(1));
         return position;
     }
 }
