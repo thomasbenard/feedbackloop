@@ -13,6 +13,10 @@ public class Position {
         this.coordinates = new ArrayList(Arrays.asList(coordinates));
     }
 
+    public Position(List<Integer> coordinates) {
+        this.coordinates = coordinates;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
