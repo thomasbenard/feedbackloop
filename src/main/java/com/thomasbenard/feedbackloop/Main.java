@@ -16,7 +16,7 @@ public class Main {
     private static ArrayList<Integer> runScenarios(int moveDistance) {
         ArrayList<Integer> scenarioResults = new ArrayList<Integer>();
         for (int i = 0; i < 10000; i++) {
-            Scenario scenario = new Scenario(new Position(0, 0), new Position(1000, 1500), new RandomDirectionGenerator());
+            Scenario scenario = new Scenario(new Position(0, 0), new Position(1000, 1500), new RandomDirectionGenerator(2));
             scenarioResults.add(scenario.run(moveDistance));
         }
         return scenarioResults;
