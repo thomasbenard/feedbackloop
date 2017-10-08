@@ -1,10 +1,6 @@
 package com.thomasbenard.feedbackloop;
 
-public enum Direction {
-    EAST(0, true),
-    SOUTH(1, false),
-    WEST(0, false),
-    NORTH(1, true);
+public class Direction {
 
     public static int DIRECTION_NUMBER = 4;
     public final int dimension;

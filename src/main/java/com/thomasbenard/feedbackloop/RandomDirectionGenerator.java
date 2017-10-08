@@ -9,12 +9,12 @@ public class RandomDirectionGenerator implements DirectionGenerator {
     public Direction getNextDirection() {
         int randomNumber = rng.nextInt(DIRECTION_NUMBER);
         if(randomNumber == 0)
-            return NORTH;
+            return new Direction(1, true);
         else if(randomNumber == 1)
-            return EAST;
+            return new Direction(0, true);
         else if(randomNumber == 2)
-            return SOUTH;
+            return new Direction(1, false);
         else
-            return WEST;
+            return new Direction(0, false);
     }
 }

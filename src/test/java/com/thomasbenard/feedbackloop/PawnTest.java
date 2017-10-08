@@ -29,12 +29,12 @@ public class PawnTest {
     @Parameters
     public static Collection<Object[]> params() {
         return Arrays.asList(
-                new Object[]{NORTH, 1, new Position(0, 1)},
-                new Object[]{NORTH, 10, new Position(0, 10)},
-                new Object[]{EAST, 1, new Position(1, 0)},
-                new Object[]{EAST, 10, new Position(10, 0)},
-                new Object[]{SOUTH, 10, new Position(0, -10)},
-                new Object[]{WEST, 10, new Position(-10, 0)}
+                new Object[]{new Direction(1, true), 1, new Position(0, 1)},
+                new Object[]{new Direction(1, true), 10, new Position(0, 10)},
+                new Object[]{new Direction(0, true), 1, new Position(1, 0)},
+                new Object[]{new Direction(0, true), 10, new Position(10, 0)},
+                new Object[]{new Direction(1, false), 10, new Position(0, -10)},
+                new Object[]{new Direction(0, false), 10, new Position(-10, 0)}
         );
     }
 
