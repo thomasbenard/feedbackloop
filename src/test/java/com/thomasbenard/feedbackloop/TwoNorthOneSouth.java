@@ -7,7 +7,7 @@ public class TwoNorthOneSouth implements DirectionGenerator{
     public Direction getNextDirection() {
         index++;
         if(index % 3 == 0)
-            return SOUTH;
-        return NORTH;
+            return new Direction(1, false);
+        return new Direction(1, true);
     }
 }
